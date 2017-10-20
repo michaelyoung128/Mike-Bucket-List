@@ -1186,3 +1186,1007 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+Started POST "/sign-up" for 127.0.0.1 at 2017-10-19 15:12:33 -0400
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "m"], ["token", "826542d7bd414232f6a5aee52eee7fb1"], ["password_digest", "$2a$10$OWxqoQIp8y9csx.XKrMaQOIk1aS3WlJmykjMO6.jHBv.Px3Hzb8vK"], ["created_at", "2017-10-19 19:12:34.422394"], ["updated_at", "2017-10-19 19:12:34.422394"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "m"], ["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (1.74ms)
+Completed 201 Created in 105ms (Views: 14.2ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-19 15:13:09 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/michael/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/michael/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-10-19 15:13:17 -0400
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-10-19 15:16:32 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"mm", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mm"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mm"], ["token", "eef2a8ee29ac28eed9186aa78d89507c"], ["password_digest", "$2a$10$Of.rKqkRSi.860jgzWR5l.7LWIoTOYcPYvSBf/PDKYqp02UrPQr4W"], ["created_at", "2017-10-19 19:16:32.697315"], ["updated_at", "2017-10-19 19:16:32.697315"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mm"], ["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 201 Created in 63ms (Views: 0.5ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:18:09 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mm"], ["LIMIT", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[33mUPDATE "users" SET "token" = 'e1c5f86c4da73e4ab87e792c119e7927', "updated_at" = '2017-10-19 19:18:09.921677' WHERE "users"."id" = $1[0m  [["id", 3]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.94ms)
+Completed 200 OK in 77ms (Views: 3.3ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:18:42 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mm"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = '60587d7b43109a0d66445db2617cbe0b', "updated_at" = '2017-10-19 19:18:42.575755' WHERE "users"."id" = $1[0m  [["id", 3]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:19:34 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '37efeb55e0954858712ed0432ace6491', "updated_at" = '2017-10-19 19:19:34.380375' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.14ms)
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:34:42 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b7b359408f378f78b2961f5fe041f08d', "updated_at" = '2017-10-19 19:34:42.238244' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:35:09 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '06f61b6b8097dac7fbcdf1f60364b7c1', "updated_at" = '2017-10-19 19:35:09.664751' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 66ms (Views: 0.4ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:36:47 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'd1769318ad555c1675e0a559d7bc2c7e', "updated_at" = '2017-10-19 19:36:47.955465' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 66ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:38:29 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (10.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'abb05dbc33bb3c8168707ceb7d392e9e', "updated_at" = '2017-10-19 19:38:29.134226' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 200 OK in 74ms (Views: 0.5ms | ActiveRecord: 10.7ms)
+
+
+Started PATCH "/change-password/2" for 127.0.0.1 at 2017-10-19 15:40:20 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "abb05dbc33bb3c8168707ceb7d392e9e"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "m"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2017-10-19 19:40:20.456758"], ["password_digest", "$2a$10$CaEJnh./hgyWvst9XTyZruK8m3.8P4OYJCGyo7/NPcmZmJTJJBgwW"], ["id", 2]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 138ms (ActiveRecord: 6.9ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 15:49:29 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:49:48 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (7.8ms)[0m  [1m[33mUPDATE "users" SET "token" = 'fe40637c52ab16816fc4cf0ad7c519c0', "updated_at" = '2017-10-19 19:49:48.489769' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 401 Unauthorized in 71ms (ActiveRecord: 8.1ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 15:50:16 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (7.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '81f46303b53c96bd7924ff9bf8e02f71', "updated_at" = '2017-10-19 19:50:16.321567' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 72ms (Views: 0.6ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 15:51:20 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 15:52:10 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 15:54:49 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 16:01:16 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 16:06:21 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 16:09:07 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.77ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:09:52 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '0631d02fc91a2b8211bca74d08696eb6', "updated_at" = '2017-10-19 20:09:52.664212' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.61ms)
+Completed 200 OK in 109ms (Views: 3.0ms | ActiveRecord: 19.4ms)
+
+
+Started PATCH "/change-password/2" for 127.0.0.1 at 2017-10-19 16:10:44 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "0631d02fc91a2b8211bca74d08696eb6"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "m"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2017-10-19 20:10:44.600745"], ["password_digest", "$2a$10$EZgW1vYh/fR1mD8jhtetU.Bs2ie3P0M1O6N6aoWAzY78..vE0oUqS"], ["id", 2]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 139ms (ActiveRecord: 7.1ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 16:11:14 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:12:28 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (8.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '4d61c39db4f002c20873e5136f38b540', "updated_at" = '2017-10-19 20:12:28.159402' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 401 Unauthorized in 72ms (ActiveRecord: 8.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:12:41 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (8.1ms)[0m  [1m[33mUPDATE "users" SET "token" = 'd357b989c542d88de616cb8c5d236b98', "updated_at" = '2017-10-19 20:12:41.252757' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 8.4ms)
+
+
+Started DELETE "/sign-out/1" for 127.0.0.1 at 2017-10-19 16:14:33 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sign-out/1" for 127.0.0.1 at 2017-10-19 16:16:37 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "d357b989c542d88de616cb8c5d236b98"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '91e1437e0bcc00838b2bb2d6531918b7', "updated_at" = '2017-10-19 20:16:37.676650' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 204 No Content in 10ms (ActiveRecord: 7.2ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 16:18:03 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "0631d02fc91a2b8211bca74d08696eb6"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (8.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '20fdb3ca399f733ac4969f91051d4d58', "updated_at" = '2017-10-19 20:18:03.854511' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 204 No Content in 12ms (ActiveRecord: 9.3ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-10-19 16:18:53 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mmm"], ["token", "32e6075d2e2d2efa2583643f3b8f6901"], ["password_digest", "$2a$10$X9sgkAsHJIqp91/h5RXryOBHXMuhs6ao8R3ch1FeH6sG64OGHi.wO"], ["created_at", "2017-10-19 20:18:53.607898"], ["updated_at", "2017-10-19 20:18:53.607898"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mmm"], ["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.54ms)
+Completed 201 Created in 62ms (Views: 1.9ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:19:05 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[33mUPDATE "users" SET "token" = '8fc8fd7d04a00520824b16cba9fc5f4c', "updated_at" = '2017-10-19 20:19:05.342442' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:19:48 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = 'ba8bcc70d189f1652f3ec87c52b92ec3', "updated_at" = '2017-10-19 20:19:48.107938' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 70ms (Views: 0.5ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:22:31 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '4b8b36b451f42773bb5ccd0f3b35216e', "updated_at" = '2017-10-19 20:22:31.832408' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 66ms (Views: 0.5ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:24:46 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '51fcef345d0da7543abd96f6c88021f0', "updated_at" = '2017-10-19 20:24:46.523289' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.14ms)
+Completed 200 OK in 67ms (Views: 0.4ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:28:46 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '0491eddff4e63e29ea0239190bf46853', "updated_at" = '2017-10-19 20:28:46.167644' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 68ms (Views: 0.4ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:32:45 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'fa83ca2863e1f32a3ce35a51346dbfc6', "updated_at" = '2017-10-19 20:32:45.460935' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 401 Unauthorized in 68ms (ActiveRecord: 7.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:32:51 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '6e6faf6eca2fe834453bd397bd5cb273', "updated_at" = '2017-10-19 20:32:51.250608' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:39:00 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mm"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '6e327c9088df7ab21ae1d0c36e369bb3', "updated_at" = '2017-10-19 20:39:00.752125' WHERE "users"."id" = $1[0m  [["id", 3]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.14ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-10-19 16:45:00 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 400 Bad Request in 74ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-10-19 16:45:08 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"mmm", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mmm"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 400 Bad Request in 62ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-10-19 16:45:14 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"mm", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mm"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mm"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 400 Bad Request in 66ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:46:19 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (5.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '3d40c59b7092b8109d19168585dade51', "updated_at" = '2017-10-19 20:46:19.815818' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 401 Unauthorized in 65ms (ActiveRecord: 5.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:46:24 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '8ab8e9f4a683b3ae6b98762d07ea8b40', "updated_at" = '2017-10-19 20:46:24.197049' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.38ms)
+Completed 200 OK in 67ms (Views: 0.7ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:51:12 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '52f918fdfba83e05f0bbd82bb39085c4', "updated_at" = '2017-10-19 20:51:12.196697' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 401 Unauthorized in 65ms (ActiveRecord: 6.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:51:15 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '8bb159213cefee0300e34a78fe3a7dab', "updated_at" = '2017-10-19 20:51:15.429304' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 70ms (Views: 0.5ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2017-10-19 16:54:03 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike"], ["token", "f89edf4ef77c67cffdffe4a2a344d525"], ["password_digest", "$2a$10$D2b89wzA68LYf.tHMXDrpewyE1uzoXmiJNDn5FM19KnPYVmfInAtq"], ["created_at", "2017-10-19 20:54:03.517510"], ["updated_at", "2017-10-19 20:54:03.517510"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mike"], ["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 201 Created in 64ms (Views: 0.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:54:27 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (5.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b7471b2e75d8e52e572b017c0f6bf50d', "updated_at" = '2017-10-19 20:54:27.509994' WHERE "users"."id" = $1[0m  [["id", 5]]
+Completed 401 Unauthorized in 64ms (ActiveRecord: 5.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:54:50 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '5a45eaa69746094af9ddee784bcfc1e4', "updated_at" = '2017-10-19 20:54:50.413638' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 66ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:56:08 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f7be46998173763b1d76559281f8ef08', "updated_at" = '2017-10-19 20:56:08.113470' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 61ms (Views: 0.4ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 16:57:54 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'ed7dd2dffac381de09f8648cce6f56af', "updated_at" = '2017-10-19 20:57:54.131755' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/change-password/5" for 127.0.0.1 at 2017-10-19 16:58:04 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ed7dd2dffac381de09f8648cce6f56af"], ["LIMIT", 1]]
+Completed 400 Bad Request in 58ms (ActiveRecord: 0.3ms)
+
+
+Started POST "//sign-in" for 127.0.0.1 at 2017-10-19 17:06:30 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = 'da38b0bb6884abcc3fd53f7076a1f9da', "updated_at" = '2017-10-19 21:06:30.425466' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.14ms)
+Completed 200 OK in 68ms (Views: 0.6ms | ActiveRecord: 6.5ms)
+
+
+Started PATCH "//change-password/5" for 127.0.0.1 at 2017-10-19 17:06:37 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "da38b0bb6884abcc3fd53f7076a1f9da"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mike"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2017-10-19 21:06:37.821216"], ["password_digest", "$2a$10$onNV15HkeJoRZmkdgzsTUus4Bz1t3af556TTaomOI7c/pDvkPkBZ2"], ["id", 5]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 127ms (ActiveRecord: 7.1ms)
+
+
+Started DELETE "//sign-out/5" for 127.0.0.1 at 2017-10-19 17:06:54 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "da38b0bb6884abcc3fd53f7076a1f9da"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = 'd906fddddf352bdf6336588304efaf51', "updated_at" = '2017-10-19 21:06:54.602126' WHERE "users"."id" = $1[0m  [["id", 5]]
+Completed 204 No Content in 10ms (ActiveRecord: 6.7ms)
+
+
+Started POST "//sign-in" for 127.0.0.1 at 2017-10-19 17:07:01 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b20b9539731676844baa2af8fda0e936', "updated_at" = '2017-10-19 21:07:01.606753' WHERE "users"."id" = $1[0m  [["id", 5]]
+Completed 401 Unauthorized in 69ms (ActiveRecord: 6.5ms)
+
+
+Started POST "//sign-in" for 127.0.0.1 at 2017-10-19 17:07:04 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (5.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '41453b674c6fdd17775c512f6c9e5c50', "updated_at" = '2017-10-19 21:07:04.820263' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.27ms)
+Completed 200 OK in 67ms (Views: 0.8ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 17:10:08 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '212ac4a7c4fa440b605f82f40ac023bc', "updated_at" = '2017-10-19 21:10:08.353437' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 69ms (Views: 0.6ms | ActiveRecord: 6.7ms)
+
+
+Started PATCH "/change-password/5" for 127.0.0.1 at 2017-10-19 17:10:19 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "212ac4a7c4fa440b605f82f40ac023bc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mike"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2017-10-19 21:10:19.554371"], ["password_digest", "$2a$10$NigWngNBKZlNGnav0p8m5u52Llc.zCZLqLqfJxw8QAquktCv/GoCO"], ["id", 5]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 119ms (ActiveRecord: 7.0ms)
+
+
+Started DELETE "/sign-out/5" for 127.0.0.1 at 2017-10-19 17:10:27 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "212ac4a7c4fa440b605f82f40ac023bc"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '5ddfdac557b5d6c44aceacfb10f1ed8c', "updated_at" = '2017-10-19 21:10:27.869042' WHERE "users"."id" = $1[0m  [["id", 5]]
+Completed 204 No Content in 9ms (ActiveRecord: 6.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 17:10:36 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = '60187dd743f5306b02b9e7c1d781e8ac', "updated_at" = '2017-10-19 21:10:36.960587' WHERE "users"."id" = $1[0m  [["id", 5]]
+Completed 401 Unauthorized in 66ms (ActiveRecord: 6.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 17:10:40 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '797df43ad59198ab7beab2edce74dbc0', "updated_at" = '2017-10-19 21:10:40.229581' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 200 OK in 72ms (Views: 0.6ms | ActiveRecord: 6.7ms)
+
+
+Started PATCH "/change-password/5" for 127.0.0.1 at 2017-10-19 17:10:51 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "797df43ad59198ab7beab2edce74dbc0"], ["LIMIT", 1]]
+Completed 400 Bad Request in 58ms (ActiveRecord: 0.3ms)
+
+
+Started PATCH "/change-password/5" for 127.0.0.1 at 2017-10-19 17:10:55 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "797df43ad59198ab7beab2edce74dbc0"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mike"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2017-10-19 21:10:55.793475"], ["password_digest", "$2a$10$M1Bwxn0.NYvXuWthBItzXevfZl1mMUPbNAnngBh8ClQzCz.n4sbAq"], ["id", 5]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 128ms (ActiveRecord: 6.8ms)
+
+
+Started DELETE "/sign-out/5" for 127.0.0.1 at 2017-10-19 17:10:59 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "797df43ad59198ab7beab2edce74dbc0"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f76458f937fb0b9fe72bd5f84be48f11', "updated_at" = '2017-10-19 21:10:59.039756' WHERE "users"."id" = $1[0m  [["id", 5]]
+Completed 204 No Content in 9ms (ActiveRecord: 6.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 17:11:03 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"mike", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = '48b770aefa2747dc0c785e406e9f73b5', "updated_at" = '2017-10-19 21:11:03.391810' WHERE "users"."id" = $1[0m  [["id", 5]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3684097020057502230)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddLocationToEvents (20171019220519)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.8ms)[0m  [1m[35mALTER TABLE "events" ADD "Location" text[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171019220519"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3684097020057502230)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3684097020057502230)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserRefToEvents (20171019220827)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "events" ADD "user_id" bigint[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_user_id" ON "events"  ("user_id")[0m
+  [1m[35m (31.2ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_0cb5590091"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171019220827"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3684097020057502230)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 18:10:43 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.98ms)
+Completed 200 OK in 28ms (Views: 16.6ms | ActiveRecord: 4.1ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 18:11:50 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.29ms)
+Completed 200 OK in 28ms (Views: 20.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 18:11:58 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.99ms)
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 5.3ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3684097020057502230)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to FixColumnName (20171019222119)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "events" RENAME COLUMN "Location" TO "location"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171019222119"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3684097020057502230)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2017-10-19 19:09:19 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.26ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 19:09:51 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.15ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 19:10:11 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.19ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/events/" for 127.0.0.1 at 2017-10-19 19:11:24 -0400
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"events"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 7ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 19:12:27 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.43ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 19:13:30 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.29ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-10-19 19:14:52 -0400
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:18:23 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.31ms)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:21:11 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'dc7881a77f2b9bbf3b078bb005ada4b5', "updated_at" = '2017-10-20 00:21:11.780712' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.53ms)
+Completed 200 OK in 83ms (Views: 2.8ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:21:11 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:22:08 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a9094a6684f730a94f1d74ae63a3b8da', "updated_at" = '2017-10-20 00:22:08.713262' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 200 OK in 70ms (Views: 0.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:24:26 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.94ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:26:30 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '505396bc61ab45c2471ed6c8ab105d41', "updated_at" = '2017-10-20 00:26:30.929241' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:26:43 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.01ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:39:47 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '6b99d99967a9985a56b07972077b9a0f', "updated_at" = '2017-10-20 00:39:47.189242' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.33ms)
+Completed 200 OK in 67ms (Views: 0.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:39:48 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.91ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:41:52 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'e43c1143d41350a7d0f29e5f831b2dd3', "updated_at" = '2017-10-20 00:41:52.141730' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:41:52 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.52ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:42:10 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '4e8ed2124de1b2cebf92d59709df0f81', "updated_at" = '2017-10-20 00:42:10.828779' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:42:39 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.73ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2017-10-19 20:43:36 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.85ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:43:44 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.57ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:45:07 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.48ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:46:36 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b03b28b67465e25ee6c8c0dcff6e2d5e', "updated_at" = '2017-10-20 00:46:36.406275' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 72ms (Views: 0.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:46:46 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.58ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:47:50 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '28ca907f9a22b96bdc4ca64468254175', "updated_at" = '2017-10-20 00:47:50.901099' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.53ms)
+Completed 200 OK in 71ms (Views: 1.0ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:47:57 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.53ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:49:08 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "users" SET "token" = 'e443937939149e841d6655d013fbc22f', "updated_at" = '2017-10-20 00:49:08.690367' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 65ms (Views: 0.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:50:09 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.98ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:50:15 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '2b664bd734da7593543a6e581a8f26a4', "updated_at" = '2017-10-20 00:50:15.242118' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:50:31 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.03ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-19 20:50:42 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "2b664bd734da7593543a6e581a8f26a4"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '1c277ef0e65b037910485f9fad576f94', "updated_at" = '2017-10-20 00:50:42.909202' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 204 No Content in 10ms (ActiveRecord: 6.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:50:46 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = 'd9486cbbbe8cd508e3db9aa1ac15de8c', "updated_at" = '2017-10-20 00:50:46.840864' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 68ms (Views: 0.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:52:14 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.29ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:54:18 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'ece2c83e9b0f237e9c8a02225a957501', "updated_at" = '2017-10-20 00:54:18.445467' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 200 OK in 72ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:54:25 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (9.72ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 20:55:17 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'bb09c2ad70e76e0780a005979d5a3a72', "updated_at" = '2017-10-20 00:55:17.598685' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 68ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 20:55:21 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.27ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-19 22:29:11 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '35b9f59056daa7f3b6b3c6e48778bd5f', "updated_at" = '2017-10-20 02:29:11.596465' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.3ms)
+Completed 200 OK in 83ms (Views: 0.8ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-19 22:29:16 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.19ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 3.0ms)
+
+
