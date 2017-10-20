@@ -1,10 +1,10 @@
-class EventsController < ApplicationController
+class EventsController < ProtectedController
   before_action :set_event, only: [:show, :update, :destroy]
 
   # GET /events
   def index
-    @events = Event.all
-    # @events = current_user.events.all
+    # @events = Event.all
+    @events = current_user.events.all
 
     render json: @events
   end
@@ -16,7 +16,8 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
+    # @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
     # @events = current_user.events.build(event_params)
 
     if @event.save
@@ -28,8 +29,8 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   def update
-    if @event.update(event_params)
-    # if @event.current_user.events.update(event_params)
+    # if @event.update(event_params)
+    if @event.current_user.events.update(event_params)
       render json: @event
     else
       render json: @event.errors, status: :unprocessable_entity
@@ -50,6 +51,6 @@ class EventsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :description, :event_type, :event_category, :time_required, :details, :completed)
+      params.require(:event).permit(:name, :description, :event_type, :event_category, :time_required, :details, :completed, :location, :user_id)
     end
 end

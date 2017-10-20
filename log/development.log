@@ -2190,3 +2190,1173 @@ Processing by EventsController#index as */*
 Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 3.0ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+Started GET "/events" for 127.0.0.1 at 2017-10-20 08:22:26 -0400
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.34ms)
+Completed 200 OK in 30ms (Views: 19.1ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 08:49:35 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", ""], ["description", ""], ["event_type", ""], ["event_category", ""], ["time_required", ""], ["details", ""], ["created_at", "2017-10-20 12:49:35.048632"], ["updated_at", "2017-10-20 12:49:35.048632"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.27ms)
+Completed 201 Created in 21ms (Views: 0.8ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 08:50:30 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '8ccb46f02cd5739e9b0cf605f3ae9aba', "updated_at" = '2017-10-20 12:50:30.842667' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.85ms)
+Completed 200 OK in 88ms (Views: 3.2ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 08:55:13 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "event": {
+      "name": "TEST",
+      "description": "TEST", "event_type": "TEST",
+      "event_category": "TEST", "time_required": "1 WEEK",
+      "details": "TEST COMPLETED=FALSE LOCATION=HOME ID=11 sh scripts/events_curl_requests/create.sh
+
+TOKEN:BAhJIiU4Y2NiNDZmMDJjZDU3MzllOWIwY2Y2MDVmM2FlOWFiYQY6BkVG--0be87b3ac04f619808b269e5473f50b263bf153e NAME=TEST DESCRIPTION=TEST",
+      "completed": ""
+    }
+  }
+  
+ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
+    "event": {
+      "name": "TEST",
+      "description": "TEST", "event_type": "TEST",
+      "event_category": "TEST", "time_required": "1 WEEK",
+      "details": "TEST COMPLETED=FALSE LOCATION=HOME ID=11 sh scripts/events_curl_requests/create.sh
+
+TOKEN:BAhJIiU4Y2NiNDZmMDJjZDU3MzllOWIwY2Y2MDVmM2FlOWFiYQY6BkVG--0be87b3ac04f619808b269e5473f50b263bf153e NAME=TEST DESCRIPTION=TEST",
+      "completed": ""
+    }
+  }'):
+  
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.3) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 08:57:20 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST", "description"=>"TEST", "event_type"=>"TEST", "event_category"=>"TEST", "time_required"=>"1 WEEK", "details"=>"TEST", "completed"=>"FALSE"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "TEST"], ["description", "TEST"], ["event_type", "TEST"], ["event_category", "TEST"], ["time_required", "1 WEEK"], ["details", "TEST"], ["completed", "f"], ["created_at", "2017-10-20 12:57:20.094219"], ["updated_at", "2017-10-20 12:57:20.094219"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.29ms)
+Completed 201 Created in 9ms (Views: 0.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 08:59:02 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.73ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:01:26 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "event": {
+      "name": "TEST2",
+      "description": "TEST2", "event_type": "TEST2",
+      "event_category": "TEST2", "time_required": "1 WEEK",
+      "details": "TEST2",
+      "completed": "FALSE",
+      "location": "HOME"
+      "user_id": "michael"
+    }
+  }
+  
+ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
+    "event": {
+      "name": "TEST2",
+      "description": "TEST2", "event_type": "TEST2",
+      "event_category": "TEST2", "time_required": "1 WEEK",
+      "details": "TEST2",
+      "completed": "FALSE",
+      "location": "HOME"
+      "user_id": "michael"
+    }
+  }'):
+  
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.3) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:01:52 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "event": {
+      "name": "TEST2",
+      "description": "TEST2", "event_type": "TEST2",
+      "event_category": "TEST2", "time_required": "1 WEEK",
+      "details": "TEST2",
+      "completed": "FALSE",
+      "location": "HOME"
+      "user_id": "michael"
+    }
+  }
+  
+ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
+    "event": {
+      "name": "TEST2",
+      "description": "TEST2", "event_type": "TEST2",
+      "event_category": "TEST2", "time_required": "1 WEEK",
+      "details": "TEST2",
+      "completed": "FALSE",
+      "location": "HOME"
+      "user_id": "michael"
+    }
+  }'):
+  
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.3) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:02:24 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "event": {
+      "name": "TEST2",
+      "description": "TEST2", "event_type": "TEST2",
+      "event_category": "TEST2", "time_required": "1 WEEK",
+      "details": "TEST2",
+      "completed": "FALSE",
+      "location": "HOME"
+      "user_id": "michael"
+    }
+  }
+  
+ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
+    "event": {
+      "name": "TEST2",
+      "description": "TEST2", "event_type": "TEST2",
+      "event_category": "TEST2", "time_required": "1 WEEK",
+      "details": "TEST2",
+      "completed": "FALSE",
+      "location": "HOME"
+      "user_id": "michael"
+    }
+  }'):
+  
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.3) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.3) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:06:12 -0400
+Processing by EventsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/events_controller.rb:53:in `event_params'
+app/controllers/events_controller.rb:19:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:07:16 -0400
+Processing by EventsController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/events_controller.rb:53:in `event_params'
+app/controllers/events_controller.rb:19:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:08:37 -0400
+Processing by EventsController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/events_controller.rb:53:in `event_params'
+app/controllers/events_controller.rb:19:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:09:09 -0400
+Processing by EventsController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/events_controller.rb:53:in `event_params'
+app/controllers/events_controller.rb:19:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:10:10 -0400
+Processing by EventsController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/events_controller.rb:53:in `event_params'
+app/controllers/events_controller.rb:19:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:10:37 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME"}}
+Unpermitted parameter: :location
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:10:37.549643"], ["updated_at", "2017-10-20 13:10:37.549643"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.29ms)
+Completed 201 Created in 16ms (Views: 0.8ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:13:00 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>"michael"}}
+Unpermitted parameters: :location, :user_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:13:00.454912"], ["updated_at", "2017-10-20 13:13:00.454912"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:13:37 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>"michael"}}
+Unpermitted parameters: :location, :user_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:13:37.064884"], ["updated_at", "2017-10-20 13:13:37.064884"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:15:33 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.85ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:19:57 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>"11"}}
+Unpermitted parameters: :location, :user_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:19:57.315523"], ["updated_at", "2017-10-20 13:19:57.315523"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.31ms)
+Completed 201 Created in 14ms (Views: 0.9ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:20:20 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>"11"}}
+Unpermitted parameters: :location, :user_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:20:20.109217"], ["updated_at", "2017-10-20 13:20:20.109217"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.29ms)
+Completed 201 Created in 9ms (Views: 0.8ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:21:14 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>"11"}}
+Unpermitted parameters: :location, :user_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:21:14.104218"], ["updated_at", "2017-10-20 13:21:14.104218"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.29ms)
+Completed 201 Created in 9ms (Views: 0.8ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:23:43 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>"11"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:23:43.119762"], ["updated_at", "2017-10-20 13:23:43.119762"], ["location", "HOME"], ["user_id", 11]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 9.2ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  insert or update on table "events" violates foreign key constraint "fk_rails_0cb5590091"
+DETAIL:  Key (user_id)=(11) is not present in table "users".
+: INSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"):
+  
+app/controllers/events_controller.rb:22:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:24:07 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:24:07.283227"], ["updated_at", "2017-10-20 13:24:07.283227"], ["location", "HOME"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.41ms)
+Completed 201 Created in 10ms (Views: 1.9ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:25:11 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME", "user_id"=>"2"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 13:25:11.209490"], ["updated_at", "2017-10-20 13:25:11.209490"], ["location", "HOME"], ["user_id", 2]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.26ms)
+Completed 201 Created in 10ms (Views: 0.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:25:22 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.44ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-10-20 09:25:39 -0400
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-20 09:25:53 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/michael/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/michael/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:25:58 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.72ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:26:34 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (30.82ms)
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-10-20 09:26:56 -0400
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:27:25 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (7.75ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 09:50:53 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '274d9983b2b839f837bbc9f5ee428678', "updated_at" = '2017-10-20 13:50:53.373093' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.21ms)
+Completed 200 OK in 74ms (Views: 0.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:50:53 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.05ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 09:54:57 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '320cdbae0cca35d4df2349a674ef43e9', "updated_at" = '2017-10-20 13:54:57.454459' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:54:57 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.14ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-20 09:55:48 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "320cdbae0cca35d4df2349a674ef43e9"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '65d1434948cd627e63a532387c688e34', "updated_at" = '2017-10-20 13:55:48.632817' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 204 No Content in 10ms (ActiveRecord: 6.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 09:55:54 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '8f6c9c9a394c53b251196330d57e8bb6', "updated_at" = '2017-10-20 13:55:54.380299' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.38ms)
+Completed 200 OK in 69ms (Views: 0.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:56:09 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (7.4ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 09:56:29 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = '73218c0c7c01054e4363867a46fc0f1a', "updated_at" = '2017-10-20 13:56:29.535165' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:56:29 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.23ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 09:57:13 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '7416274eed14879c322885d9774a36a8', "updated_at" = '2017-10-20 13:57:13.885354' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 09:57:13 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.44ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 09:59:59 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '1ec5f28f406afebeaf57d1771beaba05', "updated_at" = '2017-10-20 13:59:59.374325' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.14ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:01:46 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (8.84ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:01:51 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a3cf18aa3d0fc887ced00cacf5c3a4c0', "updated_at" = '2017-10-20 14:01:51.988789' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 68ms (Views: 0.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:01:52 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 10:05:22 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"HOME"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 14:05:22.541337"], ["updated_at", "2017-10-20 14:05:22.541337"], ["location", "HOME"]]
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.46ms)
+Completed 201 Created in 14ms (Views: 1.1ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:08:57 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b0998bbd6493151d0e1795b56a5ff750', "updated_at" = '2017-10-20 14:08:57.020677' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:08:57 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.49ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:09:48 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '0462a3a6ec0de131b094517c6e65a2b6', "updated_at" = '2017-10-20 14:09:48.575326' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 70ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:09:48 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (8.11ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:15:12 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'd4df1b0a655b3a206e920acce09155eb', "updated_at" = '2017-10-20 14:15:12.164010' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 70ms (Views: 0.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:15:12 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.79ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:16:04 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '3a31a625b9bd93d1f2c6f9c85f10da65', "updated_at" = '2017-10-20 14:16:04.490568' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 68ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:16:04 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.03ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:22:24 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '6db1aa9e551b4902042ee549864752a7', "updated_at" = '2017-10-20 14:22:24.278410' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 70ms (Views: 0.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:22:24 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.61ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:24:27 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '336dac5411253d2943e4bef18c9f2861', "updated_at" = '2017-10-20 14:24:27.254266' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.15ms)
+Completed 200 OK in 64ms (Views: 0.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:24:27 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.11ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:31:31 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = '266366c2496e78f53bca8b49b8cbc557', "updated_at" = '2017-10-20 14:31:31.689967' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 401 Unauthorized in 68ms (ActiveRecord: 6.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:31:40 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = 'da21faf655032395b8790f5d0a5b3b49', "updated_at" = '2017-10-20 14:31:40.869878' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 76ms (Views: 0.8ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 10:32:43 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"TEST2", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"AT GA"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "TEST2"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 14:32:43.562859"], ["updated_at", "2017-10-20 14:32:43.562859"], ["location", "AT GA"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.4ms)
+Completed 201 Created in 9ms (Views: 0.9ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 10:33:26 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"LATEST TEST", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"AT GA"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "LATEST TEST"], ["description", "TEST2"], ["event_type", "TEST2"], ["event_category", "TEST2"], ["time_required", "1 WEEK"], ["details", "TEST2"], ["completed", "f"], ["created_at", "2017-10-20 14:33:26.684490"], ["updated_at", "2017-10-20 14:33:26.684490"], ["location", "AT GA"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (0.49ms)
+Completed 201 Created in 13ms (Views: 1.1ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 10:59:30 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'ee62d10ed270eb1809312a8229c214de', "updated_at" = '2017-10-20 14:59:30.149118' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 67ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 10:59:30 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.47ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:00:25 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '0e10ae3094834dd96e846d645e31b39d', "updated_at" = '2017-10-20 15:00:25.534549' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.14ms)
+Completed 200 OK in 66ms (Views: 0.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 11:00:25 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.13ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:04:48 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"LATEST TEST", "description"=>"TEST2", "event_type"=>"TEST2", "event_category"=>"TEST2", "time_required"=>"1 WEEK", "details"=>"TEST2", "completed"=>"FALSE", "location"=>"AT GA"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:19:in `create'
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+Started GET "/events" for 127.0.0.1 at 2017-10-20 11:06:06 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (29.99ms)
+Completed 200 OK in 66ms (Views: 55.5ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:07:43 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '8a45f4753f9a304999d6516f6e728f90', "updated_at" = '2017-10-20 15:07:43.769821' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 401 Unauthorized in 72ms (ActiveRecord: 11.4ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:07:50 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '127ba1b0781fecf14a668562eca552bc', "updated_at" = '2017-10-20 15:07:50.598282' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.82ms)
+Completed 200 OK in 68ms (Views: 3.2ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:08:59 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:19:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:10:30 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "127ba1b0781fecf14a668562eca552bc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "created_at", "updated_at", "location", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "test with Jordain"], ["description", ""], ["event_type", ""], ["event_category", ""], ["time_required", ""], ["details", ""], ["created_at", "2017-10-20 15:10:30.882099"], ["updated_at", "2017-10-20 15:10:30.882099"], ["location", ""], ["user_id", 1]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (1.5ms)
+Completed 201 Created in 52ms (Views: 3.1ms | ActiveRecord: 11.8ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:21:14 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "127ba1b0781fecf14a668562eca552bc"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/events_controller.rb:22:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:22:52 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "127ba1b0781fecf14a668562eca552bc"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `event' for #<User:0x007fe9a902beb8>
+Did you mean?  events
+               events=):
+  
+app/controllers/events_controller.rb:20:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:23:30 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "127ba1b0781fecf14a668562eca552bc"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `event' for #<User:0x007fe9a97234f0>
+Did you mean?  events
+               events=):
+  
+app/controllers/events_controller.rb:20:in `create'
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:23:46 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '80ac9bb199f14945c87d7f00c6dc4989', "updated_at" = '2017-10-20 15:23:46.710508' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.17ms)
+Completed 200 OK in 76ms (Views: 0.5ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:24:24 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "80ac9bb199f14945c87d7f00c6dc4989"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `event' for #<User:0x007fe9a9b4ac18>
+Did you mean?  events
+               events=):
+  
+app/controllers/events_controller.rb:20:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:24:38 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "80ac9bb199f14945c87d7f00c6dc4989"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 5.0ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/events_controller.rb:22:in `create'
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:25:29 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "80ac9bb199f14945c87d7f00c6dc4989"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 27ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:26:02 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'acfbe422fc040a60cb06deda988c8465', "updated_at" = '2017-10-20 15:26:02.344582' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.85ms)
+Completed 200 OK in 71ms (Views: 5.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:26:37 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "acfbe422fc040a60cb06deda988c8465"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 32ms (Views: 2.6ms | ActiveRecord: 15.8ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:27:14 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test with Jordain", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "acfbe422fc040a60cb06deda988c8465"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 13ms (Views: 1.4ms | ActiveRecord: 2.3ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:27:57 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '1f9153720bd18ec02c2634ad19ef8a52', "updated_at" = '2017-10-20 15:27:57.254344' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (2.7ms)
+Completed 200 OK in 87ms (Views: 5.5ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:28:49 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test after Jordian", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1f9153720bd18ec02c2634ad19ef8a52"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 32ms (Views: 2.9ms | ActiveRecord: 15.9ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:33:28 -0400
+Processing by EventsController#create as */*
+  Parameters: {"event"=>{"name"=>"test after Jordian", "description"=>"", "event_type"=>"", "event_category"=>"", "time_required"=>"", "details"=>"", "completed"=>"", "location"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1f9153720bd18ec02c2634ad19ef8a52"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "created_at", "updated_at", "location", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "test after Jordian"], ["description", ""], ["event_type", ""], ["event_category", ""], ["time_required", ""], ["details", ""], ["created_at", "2017-10-20 15:33:38.175651"], ["updated_at", "2017-10-20 15:33:38.175651"], ["location", ""], ["user_id", 1]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Json (1.98ms)
+Completed 201 Created in 59ms (Views: 12.1ms | ActiveRecord: 9.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:37:44 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '83eff4d7386cd52f0af4a5adf4c837e1', "updated_at" = '2017-10-20 15:37:44.814447' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 73ms (Views: 0.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 11:37:44 -0400
+Processing by EventsController#index as */*
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:40:38 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '6764f4761c94f345b2832b04be8c4e99', "updated_at" = '2017-10-20 15:40:38.361075' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.18ms)
+Completed 200 OK in 68ms (Views: 0.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 11:40:38 -0400
+Processing by EventsController#index as */*
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:41:50 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"M", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "M"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:41:52 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"M", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "M"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:41:53 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"M", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "M"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:41:58 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"m", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '05436fd32d5fb046fdaa2e2ad23f1bdc', "updated_at" = '2017-10-20 15:41:58.435935' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.19ms)
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 11:41:58 -0400
+Processing by EventsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "05436fd32d5fb046fdaa2e2ad23f1bdc"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.89ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/sign-out/2" for 127.0.0.1 at 2017-10-20 11:44:08 -0400
+Processing by UsersController#signout as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "05436fd32d5fb046fdaa2e2ad23f1bdc"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '65773c2f75b913cd515aefdcc41f6a6a', "updated_at" = '2017-10-20 15:44:08.169948' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 204 No Content in 10ms (ActiveRecord: 6.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:44:19 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"MYOUNG100", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "MYOUNG100"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = 'de449685ddcee8845ac96043202f9710', "updated_at" = '2017-10-20 15:44:19.728962' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.16ms)
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-10-20 11:44:19 -0400
+Processing by EventsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "de449685ddcee8845ac96043202f9710"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.0ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.7ms)
+
+
