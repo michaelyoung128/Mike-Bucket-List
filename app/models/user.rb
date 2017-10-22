@@ -2,5 +2,6 @@
 
 class User < ApplicationRecord
   include Authentication
-  has_many :examples
+  # attr_reader :id
+  has_many :events
 end

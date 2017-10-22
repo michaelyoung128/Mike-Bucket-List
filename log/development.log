@@ -52,9 +52,15 @@ Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/events" for 127.0.0.1 at 2017-10-16 20:44:19 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [GET] "/events"):
 
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/events"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -78,9 +84,15 @@ puma (3.7.0) lib/puma/server.rb:415:in `process_client'
 puma (3.7.0) lib/puma/server.rb:275:in `block in run'
 puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/events" for 127.0.0.1 at 2017-10-16 20:49:01 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [GET] "/events"):
 
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/events"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -208,9 +220,15 @@ Completed 200 OK in 114ms (Views: 3.5ms | ActiveRecord: 25.1ms)
 
 
 Started PATCH "/change-password/" for 127.0.0.1 at 2017-10-19 13:24:41 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [PATCH] "/change-password"):
 
+=======
+  
+ActionController::RoutingError (No route matches [PATCH] "/change-password"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -234,9 +252,15 @@ puma (3.7.0) lib/puma/server.rb:415:in `process_client'
 puma (3.7.0) lib/puma/server.rb:275:in `block in run'
 puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started PATCH "/change-password/" for 127.0.0.1 at 2017-10-19 13:25:45 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [PATCH] "/change-password"):
 
+=======
+  
+ActionController::RoutingError (No route matches [PATCH] "/change-password"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -312,9 +336,15 @@ Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms)
 
 
 Started GET "/sign-in" for 127.0.0.1 at 2017-10-19 13:40:19 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [GET] "/sign-in"):
 
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/sign-in"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -411,7 +441,11 @@ Contents:
       "completed": ""
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "events": {
       "name": "",
@@ -423,7 +457,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "completed": ""
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -489,7 +527,11 @@ Contents:
       "completed": ""
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "events": {
       "name": "PYRAMIDS",
@@ -501,7 +543,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "completed": ""
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -562,14 +608,22 @@ Contents:
       "description": "GO",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "events": {
       "name": "PYRAMIDS",
       "description": "GO",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -621,9 +675,15 @@ puma (3.7.0) lib/puma/server.rb:415:in `process_client'
 puma (3.7.0) lib/puma/server.rb:275:in `block in run'
 puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started POST "/" for 127.0.0.1 at 2017-10-19 14:04:14 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [POST] "/"):
 
+=======
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -665,9 +725,15 @@ Completed 200 OK in 72ms (Views: 0.7ms | ActiveRecord: 6.5ms)
 
 
 Started POST "/" for 127.0.0.1 at 2017-10-19 14:06:14 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [POST] "/"):
 
+=======
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -691,9 +757,15 @@ puma (3.7.0) lib/puma/server.rb:415:in `process_client'
 puma (3.7.0) lib/puma/server.rb:275:in `block in run'
 puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started POST "/" for 127.0.0.1 at 2017-10-19 14:07:50 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [POST] "/"):
 
+=======
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -726,9 +798,15 @@ Contents:
     }
   }
 Started POST "/" for 127.0.0.1 at 2017-10-19 14:08:22 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [POST] "/"):
 
+=======
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -770,14 +848,22 @@ Contents:
       "description": "GO",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "PYRAMIDS",
       "description": "GO",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -838,14 +924,22 @@ Contents:
       "description": "GO",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "PYRAMIDS",
       "description": "GO",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -917,7 +1011,11 @@ Contents:
       "event_category": "SIGHT SEE",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "Great Wall",
@@ -925,7 +1023,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "event_category": "SIGHT SEE",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -1028,7 +1130,11 @@ Contents:
       "details": "TBD",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "Great Wall4",
@@ -1037,7 +1143,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "details": "TBD",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -1126,9 +1236,15 @@ Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
 
 
 Started POST "/events/8" for 127.0.0.1 at 2017-10-19 14:27:39 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [POST] "/events/8"):
 
+=======
+  
+ActionController::RoutingError (No route matches [POST] "/events/8"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -2234,7 +2350,11 @@ TOKEN:BAhJIiU4Y2NiNDZmMDJjZDU3MzllOWIwY2Y2MDVmM2FlOWFiYQY6BkVG--0be87b3ac04f6198
       "completed": ""
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "TEST",
@@ -2246,7 +2366,11 @@ TOKEN:BAhJIiU4Y2NiNDZmMDJjZDU3MzllOWIwY2Y2MDVmM2FlOWFiYQY6BkVG--0be87b3ac04f6198
       "completed": ""
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -2329,7 +2453,11 @@ Contents:
       "user_id": "michael"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "TEST2",
@@ -2341,7 +2469,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "user_id": "michael"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -2407,7 +2539,11 @@ Contents:
       "user_id": "michael"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "TEST2",
@@ -2419,7 +2555,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "user_id": "michael"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -2485,7 +2625,11 @@ Contents:
       "user_id": "michael"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "TEST2",
@@ -2497,7 +2641,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "user_id": "michael"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -2553,9 +2701,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:53:in `event_params'
 app/controllers/events_controller.rb:19:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:07:16 -0400
@@ -2563,9 +2717,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:53:in `event_params'
 app/controllers/events_controller.rb:19:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:08:37 -0400
@@ -2573,9 +2733,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:53:in `event_params'
 app/controllers/events_controller.rb:19:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:09:09 -0400
@@ -2583,9 +2749,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:53:in `event_params'
 app/controllers/events_controller.rb:19:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:10:10 -0400
@@ -2593,9 +2765,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:53:in `event_params'
 app/controllers/events_controller.rb:19:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:10:37 -0400
@@ -2680,11 +2858,19 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 29ms (ActiveRecord: 9.2ms)
 
 
+<<<<<<< HEAD
 
 ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  insert or update on table "events" violates foreign key constraint "fk_rails_0cb5590091"
 DETAIL:  Key (user_id)=(11) is not present in table "users".
 : INSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"):
 
+=======
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  insert or update on table "events" violates foreign key constraint "fk_rails_0cb5590091"
+DETAIL:  Key (user_id)=(11) is not present in table "users".
+: INSERT INTO "events" ("name", "description", "event_type", "event_category", "time_required", "details", "completed", "created_at", "updated_at", "location", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:22:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 09:24:07 -0400
 Processing by EventsController#create as */*
@@ -3072,9 +3258,15 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 
 NoMethodError (undefined method `events' for nil:NilClass):
 
+=======
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:19:in `create'
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
@@ -3110,9 +3302,15 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 
 NoMethodError (undefined method `events' for nil:NilClass):
 
+=======
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:19:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:10:30 -0400
 Processing by EventsController#create as */*
@@ -3132,9 +3330,15 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 NoMethodError (undefined method `save' for nil:NilClass):
 
+=======
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:22:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:22:52 -0400
 Processing by EventsController#create as */*
@@ -3143,11 +3347,19 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 NoMethodError (undefined method `event' for #<User:0x007fe9a902beb8>
 Did you mean?  events
                events=):
 
+=======
+  
+NoMethodError (undefined method `event' for #<User:0x007fe9a902beb8>
+Did you mean?  events
+               events=):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:23:30 -0400
 Processing by EventsController#create as */*
@@ -3156,11 +3368,19 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 NoMethodError (undefined method `event' for #<User:0x007fe9a97234f0>
 Did you mean?  events
                events=):
 
+=======
+  
+NoMethodError (undefined method `event' for #<User:0x007fe9a97234f0>
+Did you mean?  events
+               events=):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 11:23:46 -0400
 Processing by UsersController#signin as */*
@@ -3178,11 +3398,19 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 NoMethodError (undefined method `event' for #<User:0x007fe9a9b4ac18>
 Did you mean?  events
                events=):
 
+=======
+  
+NoMethodError (undefined method `event' for #<User:0x007fe9a9b4ac18>
+Did you mean?  events
+               events=):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:24:38 -0400
 Processing by EventsController#create as */*
@@ -3191,9 +3419,15 @@ Processing by EventsController#create as */*
 Completed 500 Internal Server Error in 28ms (ActiveRecord: 5.0ms)
 
 
+<<<<<<< HEAD
 
 NoMethodError (undefined method `save' for nil:NilClass):
 
+=======
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:22:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 11:25:29 -0400
 Processing by EventsController#create as */*
@@ -3383,9 +3617,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events" for 127.0.0.1 at 2017-10-20 11:58:00 -0400
@@ -3394,9 +3634,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events" for 127.0.0.1 at 2017-10-20 12:00:09 -0400
@@ -3405,9 +3651,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.4ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 12:01:51 -0400
@@ -3433,9 +3685,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events" for 127.0.0.1 at 2017-10-20 12:04:22 -0400
@@ -3444,9 +3702,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 13:07:02 -0400
@@ -3456,9 +3720,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:09:28 -0400
@@ -3500,9 +3770,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.4ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started GET "/events" for 127.0.0.1 at 2017-10-20 13:17:32 -0400
@@ -3558,9 +3834,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:31:29 -0400
@@ -3587,9 +3869,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 3ms (ActiveRecord: 1.0ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:34:12 -0400
@@ -3616,9 +3904,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:35:12 -0400
@@ -3645,9 +3939,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events" for 127.0.0.1 at 2017-10-20 13:40:37 -0400
@@ -3657,9 +3957,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 3ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:40:43 -0400
@@ -3686,9 +3992,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:49:10 -0400
@@ -3714,9 +4026,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:52:26 -0400
@@ -3742,9 +4060,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 13:54:35 -0400
@@ -3771,9 +4095,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 14:02:25 -0400
@@ -3800,9 +4130,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 14:10:46 -0400
@@ -3828,9 +4164,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 14:17:09 -0400
@@ -3856,9 +4198,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 14:17:19 -0400
@@ -3867,9 +4215,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-up" for 127.0.0.1 at 2017-10-20 14:23:09 -0400
@@ -4011,9 +4365,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 14:47:30 -0400
@@ -4219,9 +4579,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started GET "/" for 127.0.0.1 at 2017-10-20 15:13:43 -0400
@@ -4247,9 +4613,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:54:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events/" for 127.0.0.1 at 2017-10-20 15:18:47 -0400
@@ -4265,11 +4637,19 @@ Contents:
       "time_required": "BRIAN",
       "details": "BRIAN",
       "completed": "TRUE",
+<<<<<<< HEAD
       "location": "BRAIN COMPLETED=TRUE DESCRIPTION=BRIAN DETAILS=BRIAN sh assets/scripts/curl-requests/add_event.sh
 TOKEN=BAhJIiU2NzliOTY1MmViMDk1MmMxNmFmYzIyYzRmMjYxYTk1MwY6BkVG--a67364df4aeb5a31d1d9376118a0d79b62ead85e NAME=Brian EVENT_TYPE=BRIAN EVENT_CATEGORY=BRIAN TIME_REQUIRED=BRIAN LOCATION=BRAIN"
     }
   }
 
+=======
+      "location": "BRAIN COMPLETED=TRUE DESCRIPTION=BRIAN DETAILS=BRIAN sh assets/scripts/curl-requests/add_event.sh 
+TOKEN=BAhJIiU2NzliOTY1MmViMDk1MmMxNmFmYzIyYzRmMjYxYTk1MwY6BkVG--a67364df4aeb5a31d1d9376118a0d79b62ead85e NAME=Brian EVENT_TYPE=BRIAN EVENT_CATEGORY=BRIAN TIME_REQUIRED=BRIAN LOCATION=BRAIN"
+    }
+  }
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "data": {
       "name": "Brian",
@@ -4279,11 +4659,19 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "time_required": "BRIAN",
       "details": "BRIAN",
       "completed": "TRUE",
+<<<<<<< HEAD
       "location": "BRAIN COMPLETED=TRUE DESCRIPTION=BRIAN DETAILS=BRIAN sh assets/scripts/curl-requests/add_event.sh
 TOKEN=BAhJIiU2NzliOTY1MmViMDk1MmMxNmFmYzIyYzRmMjYxYTk1MwY6BkVG--a67364df4aeb5a31d1d9376118a0d79b62ead85e NAME=Brian EVENT_TYPE=BRIAN EVENT_CATEGORY=BRIAN TIME_REQUIRED=BRIAN LOCATION=BRAIN"
     }
   }'):
 
+=======
+      "location": "BRAIN COMPLETED=TRUE DESCRIPTION=BRIAN DETAILS=BRIAN sh assets/scripts/curl-requests/add_event.sh 
+TOKEN=BAhJIiU2NzliOTY1MmViMDk1MmMxNmFmYzIyYzRmMjYxYTk1MwY6BkVG--a67364df4aeb5a31d1d9376118a0d79b62ead85e NAME=Brian EVENT_TYPE=BRIAN EVENT_CATEGORY=BRIAN TIME_REQUIRED=BRIAN LOCATION=BRAIN"
+    }
+  }'):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4350,7 +4738,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "data": {
       "name": "MIKE",
@@ -4363,7 +4755,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4430,7 +4826,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "data": {
       "name": "MIKE",
@@ -4443,7 +4843,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4510,7 +4914,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "data": {
       "name": "MIKE",
@@ -4523,7 +4931,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4590,7 +5002,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -4603,7 +5019,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4670,7 +5090,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -4683,7 +5107,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4750,7 +5178,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -4763,7 +5195,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4830,7 +5266,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -4843,7 +5283,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4909,7 +5353,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -4921,7 +5369,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -4988,7 +5440,11 @@ Contents:
       "location": "GA"
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -5001,7 +5457,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "location": "GA"
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -5061,13 +5521,21 @@ Contents:
       "name": "MIKE",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -5166,7 +5634,11 @@ Contents:
       "event_category": "TEST",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -5175,7 +5647,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "event_category": "TEST",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -5260,7 +5736,11 @@ Contents:
       "time_required": "TEST",
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -5269,7 +5749,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "time_required": "TEST",
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -5369,7 +5853,11 @@ Contents:
       "completed": TRUE
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
     "event": {
       "name": "MIKE",
@@ -5382,7 +5870,11 @@ ActionDispatch::Http::Parameters::ParseError (743: unexpected token at '{
       "completed": TRUE
     }
   }'):
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.3) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -5468,9 +5960,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:55:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 15:51:44 -0400
@@ -5497,9 +5995,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:55:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 15:54:20 -0400
@@ -5526,9 +6030,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:55:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/events" for 127.0.0.1 at 2017-10-20 16:00:34 -0400
@@ -5538,9 +6048,15 @@ Processing by EventsController#create as */*
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
 
 
+<<<<<<< HEAD
 
 ActionController::ParameterMissing (param is missing or the value is empty: event):
 
+=======
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+>>>>>>> api
 app/controllers/events_controller.rb:55:in `event_params'
 app/controllers/events_controller.rb:20:in `create'
 Started POST "/sign-in" for 127.0.0.1 at 2017-10-20 16:00:52 -0400
@@ -8160,9 +8676,15 @@ Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.6ms)
 
 
 Started DELETE "/events/" for 127.0.0.1 at 2017-10-21 15:50:32 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [DELETE] "/events"):
 
+=======
+  
+ActionController::RoutingError (No route matches [DELETE] "/events"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -8186,9 +8708,15 @@ puma (3.7.0) lib/puma/server.rb:415:in `process_client'
 puma (3.7.0) lib/puma/server.rb:275:in `block in run'
 puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started DELETE "/events/" for 127.0.0.1 at 2017-10-21 15:50:33 -0400
+<<<<<<< HEAD
 
 ActionController::RoutingError (No route matches [DELETE] "/events"):
 
+=======
+  
+ActionController::RoutingError (No route matches [DELETE] "/events"):
+  
+>>>>>>> api
 actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
@@ -10780,6 +11308,12 @@ Processing by EventsController#index as */*
   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 7]]
 [active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.81ms)
 Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.9ms)
+<<<<<<< HEAD
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
+=======
+
+
+>>>>>>> api
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
