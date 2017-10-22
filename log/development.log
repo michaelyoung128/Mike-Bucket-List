@@ -10782,3 +10782,4 @@ Processing by EventsController#index as */*
 Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.9ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /Users/michael/wdi/projects/mikes-bucket-list-api/config/initializers/new_framework_defaults.rb:18)
