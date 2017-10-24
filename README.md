@@ -12,7 +12,7 @@ Purpose: Remembering the important things are hard – never mind, the fleeting 
 
 Process:
 1.	Produced an ERD based on MVP and documented future enhancements to work toward proper database normalization as future releases
-•	Link to ERD: https://github.com/michaelyoung128/mikes-bucket-list/blob/master/bucket%20list%20ERD.pdf
+    Link to ERD: https://github.com/michaelyoung128/mikes-bucket-list/blob/master/bucket%20list%20ERD.pdf
 2.	Using Rails’ scaffolding functionality, created the Events resource to create migration data, controller, model and serializer
 3.	Created CURL requests to ensure database could be written to and read from.
 4.	Tested CURL scripts against localhost environments
