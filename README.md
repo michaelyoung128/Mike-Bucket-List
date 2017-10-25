@@ -2,8 +2,9 @@ Mike’s Bucket List – Back-end ReadMe
 
 Front-End URL: https://michaelyoung128.github.io/mikes-bucket-list/
 
-Back-End URL: https://michaelyoung128.github.io/Mikes-Bucket-List-Api/
+Front-End Repo: https://github.com/michaelyoung128/mikes-bucket-list
 
+Back-End URL: https://michaelyoung128.github.io/Mikes-Bucket-List-Api/
 
 Technologies Utilized: • Ruby • Rails • SQL • Ajax • JSON
 
